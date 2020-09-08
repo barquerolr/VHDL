@@ -1,0 +1,62 @@
+library ieee;
+use ieee.std_logic_1164.all;
+use ieee.numeric_std.all;
+entity alu_testbench is
+end alu_testbench;
+
+architecture behavior of alu_testbench is
+
+  -- define the maximum delay for the DUT
+  constant MAX_DELAY : time := 20 ns;
+  constant LOGIC_WIDTH : integer := 8;
+  constant NO_VECTORS : integer := 12;
+
+  -- declare a constant to hold an array of input values
+  type input_value_array1 is array (1 to NO_VECTORS) of std_logic_vector(0 to 1);
+  type input_value_array2 is array (1 to NO_VECTORS) of std_logic_vector(0 to LOGIC_WIDTH-1);
+  type output_value_array is array (1 to NO_VECTORS) of std_logic_vector(0 to LOGIC_WIDTH-1);
+  
+  constant ALUctr_sig_values : input_value_array1 :=  ("00","00","00","00",
+						       "01","01","01","01",
+                                                       "11","11","11","11");
+
+  constant A_sig_values : input_value_array2 :=       ("00000000","00000000","00000000","00000000",
+                                                       "00001111","00001111","00001111","00001111",
+						       "11111111","11111111","11111111","11111111",
+						       "00000111","00000111","00000111","00000111");
+
+  constant B_sig_values : input_value_array2 :=       ("01111111","01111111","01111111","01111111",
+						       "00000000","00000000","00000000","00000000",
+						       "00100000","00100000","00100000","00100000",
+						       "11000000","11000000","11000000","11000000");
+
+  constant Result_sig_values : output_value_array :=  ("01111111","00001111","00011111","11000111",
+						       "10000001","00001111","11011111","01000111",
+						       "01111111","00001111","11111111","11000111");
+
+  
+  -- define signals that connect to DUT
+  signal A_sig, B_sig, Result_sig : std_logic_vector(0 to LOGIC_WIDTH-1);
+  signal ALUctr_sig : std_logic_vector(0 to 1);
+  
+  begin
+  
+    -- this is the process that will generate the inputs
+    stimulus : process
+      begin
+        for i in 1 to NO_VECTORS loop
+          A_sig <= A_sig_values(i);
+          B_sig <= B_sig_values(i);
+          ALUctr_sig <= ALUctr_sig_values(i);
+          wait for MAX_DELAY;
+        end loop;
+        wait; -- stop the process to avoid an infinite loop
+    end process stimulus;
+
+    -- this is the component instantiation for the
+    -- DUT - the device we are testing
+    DUT : entity work.LAB3(model)
+      generic map(N => LOGIC_WIDTH)
+      port map(ALUctr_in => ALUctr_sig, A_in => A_sig, B_in => B_sig, Result_out => Result_sig);
+ 
+end behavior;

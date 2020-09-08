@@ -1,0 +1,95 @@
+entity lab3_testbench2 is
+end lab3_testbench2;
+
+architecture behavior of lab3_testbench2 is
+--define the maximum delay for the DUT
+constant MAX_DELAY : time := 100 ns;
+constant BIT_WIDTH : integer := 4;
+constant NO_VECTORS : integer := 10;
+signal in_4_bit_sig2 : bit_vector(0 to BIT_WIDTH -1);
+signal parity_sig2: bit := '0';
+signal zero_sig2: bit := '0';
+signal one_sig2 : bit := '0';
+
+--declare a constant to hold an array of input values
+type input_value_array is array(1 to NO_VECTORS) of bit_vector(0 to BIT_WIDTH -1);
+constant in_4_bit : input_value_array := ("0011",
+                                          "1010",
+                                          "0010",
+                                          "1001",
+                                          "1000",
+                                          "0110",
+					  "0000",
+					  "1111"
+					  "0111",
+					  "1011");
+
+constant parity : bit_vector(1 to NO_VECTORS) :=
+('0','0','1','0','1','0','0','0','1','1');
+
+constant zero : bit_vector(1 to NO_VECTORS) :=
+('0','0','0','0','0','0','1','0','0','0');
+
+constant one : bit_vector(1 to NO_VECTORS) :=
+('0','0','0','0','0','0','0','1','0','0');
+
+-- define signals that connect to DUT
+
+begin
+  
+-- this is the process that will generate the inputs
+
+stimulus: process
+
+  begin
+    for i in 1 to NO_VECTORS loop
+      in_4_bit_sig2 <= in_4_bit(i);
+      wait for MAX_DELAY;
+    end loop;
+    wait; -- stops the process to avoid an infinite loop
+  end process stimulus;
+  
+  -- this is the component instantiation for the 
+  -- DUT - the device we are testing 
+  DUT : entity work.lab_3(simple)
+        generic map(N => BIT_WIDTH)
+        port map(in_4_bit => in_4_bit_sig2, parity => parity_sig2, zero => zero_sig2,
+                 one => one_sig2);  
+  
+  -- monitor
+  
+  monitor : process
+  variable i : integer;
+  begin
+    wait on in_4_bit_sig2;
+    wait for MAX_DELAY/2;
+    i := 1;
+    while (i <= NO_VECTORS) loop
+      exit when (in_4_bit_sig2 = in_4_bit(i));
+       i := i + 1;
+     end loop;
+     
+     assert i <= NO_VECTORS 
+       report "ERROR - no valid input value found"
+       severity failure;
+      
+     assert in_4_bit_sig2 = in_4_bit(i)
+       report "ERROR - incorrect values on in_8_bit_sig"
+       severity error;
+       
+     assert parity_sig2 = parity(i)
+       report "ERROR - incorrect values on in_8_bit_sig"
+       severity error;
+       
+     assert zero_sig2 = zero(i)
+       report "ERROR - incorrect values on in_8_bit_sig"
+       severity error;
+       
+     assert one_sig2 = one(i)
+       report "ERROR - incorrect values on in_8_bit_sig"
+       severity error;
+       
+     end process monitor;
+                    
+end behavior;  
+                                 

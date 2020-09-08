@@ -1,0 +1,169 @@
+m255
+K4
+z2
+13
+!s112 1.1
+!i10d 8192
+!i10e 25
+!i10f 100
+cModel Technology
+Z0 dC:/Users/ASUS/Documents/VCU Courses/EGRE 365/Labs/Lab 4
+Ecompareent
+Z1 w1506886484
+Z2 DPx4 ieee 11 numeric_std 0 22 :ASDNFgHXf_ih3J@9F3Ze1
+Z3 DPx3 std 6 textio 0 22 zE1`LPoLg^DX3Oz^4Fj1K3
+Z4 DPx4 ieee 14 std_logic_1164 0 22 eNV`TJ_GofJTzYa?f<@Oe1
+R0
+Z5 8C:/Users/ASUS/Documents/VCU Courses/EGRE 365/Homework 2/compareENT.vhd
+Z6 FC:/Users/ASUS/Documents/VCU Courses/EGRE 365/Homework 2/compareENT.vhd
+l0
+L5
+VJHA6`CQj99:BXLXLSf6Xz2
+!s100 g5TGzK>fA]3I;QNGfJV4;3
+Z7 OP;C;10.4a;61
+32
+Z8 !s110 1506886552
+!i10b 1
+Z9 !s108 1506886552.000000
+Z10 !s90 -reportprogress|300|-work|work|C:/Users/ASUS/Documents/VCU Courses/EGRE 365/Homework 2/compareENT.vhd|
+Z11 !s107 C:/Users/ASUS/Documents/VCU Courses/EGRE 365/Homework 2/compareENT.vhd|
+!i113 1
+Z12 o-work work -O0
+Z13 tExplicit 1
+Asimple
+R2
+R3
+R4
+DEx4 work 10 compareent 0 22 JHA6`CQj99:BXLXLSf6Xz2
+l60
+L16
+VE[fST@CGk9S@BTd5UUc[R2
+!s100 _`E@n3[QYIPWR;7:?MkAQ2
+R7
+32
+R8
+!i10b 1
+R9
+R10
+R11
+!i113 1
+R12
+R13
+Elab4
+Z14 w1506546636
+R4
+R3
+R2
+R0
+Z15 8C:/Users/ASUS/Documents/VCU Courses/EGRE 365/Labs/Lab 4/Lab4.vhd
+Z16 FC:/Users/ASUS/Documents/VCU Courses/EGRE 365/Labs/Lab 4/Lab4.vhd
+l0
+L9
+Vaz6H>K705Y^Z>?_=W?Oii1
+!s100 ZA^2CiCS_D5^fU0TjGXC11
+R7
+32
+Z17 !s110 1506559745
+!i10b 1
+Z18 !s108 1506559745.000000
+Z19 !s90 -reportprogress|300|-work|work|C:/Users/ASUS/Documents/VCU Courses/EGRE 365/Labs/Lab 4/Lab4.vhd|
+Z20 !s107 C:/Users/ASUS/Documents/VCU Courses/EGRE 365/Labs/Lab 4/Lab4.vhd|
+!i113 1
+R12
+R13
+Amodel
+R4
+R3
+R2
+Z21 DEx4 work 4 lab4 0 22 az6H>K705Y^Z>?_=W?Oii1
+l21
+L19
+VI_1mU[l]<L1=9Zj22X?k:0
+!s100 anH5:>5?zTn?0Cb=?=FAM3
+R7
+32
+R17
+!i10b 1
+R18
+R19
+R20
+!i113 1
+R12
+R13
+Elab4_testbench
+Z22 w1506559740
+R4
+R3
+R2
+R0
+Z23 8C:/Users/ASUS/Documents/VCU Courses/EGRE 365/Labs/Lab 4/Lab4_Testbench.vhd
+Z24 FC:/Users/ASUS/Documents/VCU Courses/EGRE 365/Labs/Lab 4/Lab4_Testbench.vhd
+l0
+L9
+V<<X<4d4QCEo>[MR`DK3QK3
+!s100 ]Ge9C;F?3A[U>GZP4_Tkh2
+R7
+32
+Z25 !s110 1506559746
+!i10b 1
+Z26 !s108 1506559746.000000
+Z27 !s90 -reportprogress|300|-work|work|C:/Users/ASUS/Documents/VCU Courses/EGRE 365/Labs/Lab 4/Lab4_Testbench.vhd|
+Z28 !s107 C:/Users/ASUS/Documents/VCU Courses/EGRE 365/Labs/Lab 4/Lab4_Testbench.vhd|
+!i113 1
+R12
+R13
+Abehavior
+R21
+R4
+R3
+R2
+DEx4 work 14 lab4_testbench 0 22 <<X<4d4QCEo>[MR`DK3QK3
+l265
+L12
+VmYWo[HBN1ZMDlhniPh=P^1
+!s100 WCFe@fac31304<2YJOT2D0
+R7
+32
+R25
+!i10b 1
+R26
+R27
+R28
+!i113 1
+R12
+R13
+En_bit_adder
+Z29 w1506630670
+R0
+Z30 8C:/Users/ASUS/Documents/VCU Courses/EGRE 365/example9.vhd
+Z31 FC:/Users/ASUS/Documents/VCU Courses/EGRE 365/example9.vhd
+l0
+L1
+ViVi^7>aN=_]Y_3UVYaMJ41
+!s100 dSdPLUedU4NgdQKki;V7X1
+R7
+32
+Z32 !s110 1506630701
+!i10b 1
+Z33 !s108 1506630700.000000
+Z34 !s90 -reportprogress|300|-work|work|C:/Users/ASUS/Documents/VCU Courses/EGRE 365/example9.vhd|
+Z35 !s107 C:/Users/ASUS/Documents/VCU Courses/EGRE 365/example9.vhd|
+!i113 1
+R12
+R13
+Asimple
+DEx4 work 11 n_bit_adder 0 22 iVi^7>aN=_]Y_3UVYaMJ41
+l13
+L10
+V8UHCN=2@@NmgbC<^19C5Z3
+!s100 03GD8eRP_=nF:z;3iB]Gg0
+R7
+32
+R32
+!i10b 1
+R33
+R34
+R35
+!i113 1
+R12
+R13
