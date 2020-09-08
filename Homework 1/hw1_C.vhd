@@ -1,0 +1,8 @@
+entity hw1_C is
+  port (A,B,C,D: in bit;
+        F4: out bit);
+end hw1_C;
+architecture simple of hw1_C is 
+begin 
+       F4 <= (NOT C) OR ((NOT A) AND (NOT D)) OR (B AND (NOT D));
+end simple;

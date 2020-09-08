@@ -1,0 +1,35 @@
+entity hw1A_testbench is
+end hw1A_testbench;
+
+architecture behavior of hw1A_testbench is
+
+signal input : bit_vector (0 to 3);
+signal output: bit;
+
+begin
+
+stimulus : process
+   begin
+	input <= "0000" after 100 ns,
+		 "0001" after 200 ns,
+           	 "0010" after 300 ns,
+		 "0011" after 400 ns,
+		 "0100" after 500 ns,
+           	 "0101" after 600 ns,
+		 "0110" after 700 ns;
+
+	wait;
+      end process stimulus;
+
+	DUT: entity work.two_to_one_mux(simple)
+	     port map(a => input(0),
+		      b => input(1),
+		      c => input(2),
+		      sel => input(3),
+		      y => output);
+
+	monitor : process
+	begin 
+	   wait;
+	end process monitor;
+end behavior;

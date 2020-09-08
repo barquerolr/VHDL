@@ -1,0 +1,44 @@
+entity hw1D_testbench is
+end hw1D_testbench;
+
+architecture behavior of hw1D_testbench is
+
+signal input : bit_vector (0 to 3);
+signal output: bit;
+
+begin
+
+stimulus : process
+   begin
+	input <= "0000" after 100 ns,
+		 "0001" after 200 ns,
+           	 "0010" after 300 ns,
+		 "0011" after 400 ns,
+		 "0100" after 500 ns,
+           	 "0101" after 600 ns,
+		 "0110" after 700 ns,
+		 "0111" after 800 ns,
+           	 "1000" after 900 ns,
+		 "1001" after 1000 ns,
+		 "1010" after 1100 ns,
+ 	 	 "1011" after 1200 ns,
+		 "1100" after 1300 ns,
+		 "1101" after 1400 ns,
+		 "1110" after 1500 ns,
+		 "1111" after 1600 ns;
+
+	wait;
+      end process stimulus;
+
+	DUT: entity work.hw1_C(simple)
+	     port map(A => input(0),
+		      B => input(1),
+		      C => input(2),
+		      D => input(3),
+		      F4 => output);
+
+	monitor : process
+	begin 
+	   wait;
+	end process monitor;
+end behavior;
