@@ -1,0 +1,34 @@
+entity n_bit_adder is
+  generic(N : integer := 4;
+          N_tp : time := 3 ns;--propagation delay for not
+          A_tp : time := 1 ns;--propagation delay for and
+          O_tp : time := 1 ns;--propagation delay for or
+          X_tp : time := 2 ns);--propagation delay for xor
+
+  port(x,y   : in bit_vector(N-1 downto 0);
+       c_in  : in bit;
+       c_out : out bit;
+       s     : out bit_vector(N-1 downto 0));
+end n_bit_adder;
+
+architecture simple of n_bit_adder is
+
+  signal c : bit_vector(N-1 downto 0);
+  begin
+  
+  -- use a process here because we need sequential statements
+  add : process(x,y,c_in,c)
+    begin
+      -- the first bit is a special case because of c_in
+      s(0) <= x(0) XOR y(0) XOR c_in after (x_tp *2);
+      c(0) <= (x(0) AND c_in) OR (y(0) AND c_in) OR (x(0) AND y(0)) after (a_tp*3 + o_tp*2);
+      -- now do the rest of the N bits
+      for i in 1 to N-1 loop
+        s(i) <= x(i) XOR y(i) XOR c(i-1) after (x_tp *2);
+        c(i) <= (x(i) AND c(i-1)) OR (y(i) AND c(i-1)) OR (x(i) AND y(i)) after (a_tp*3 + o_tp*2);
+      end loop;
+      -- assign c_out from carry of last adder
+      c_out <= c(N-1);    
+  end process add;
+    
+end simple;

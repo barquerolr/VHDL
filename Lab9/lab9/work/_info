@@ -1,0 +1,98 @@
+m255
+K4
+z2
+13
+!s112 1.1
+!i10d 8192
+!i10e 25
+!i10f 100
+cModel Technology
+Z0 dC:/Users/ASUS/Documents/VCU Courses/EGRE 365/Labs/Lab9/lab9
+Etwi_testbench
+Z1 w1509653520
+Z2 DPx3 std 6 textio 0 22 zE1`LPoLg^DX3Oz^4Fj1K3
+Z3 DPx4 ieee 14 std_logic_1164 0 22 eNV`TJ_GofJTzYa?f<@Oe1
+R0
+Z4 8C:/Users/ASUS/Documents/VCU Courses/EGRE 365/Labs/Lab9/lab9/TWICtl_testbench.vhd
+Z5 FC:/Users/ASUS/Documents/VCU Courses/EGRE 365/Labs/Lab9/lab9/TWICtl_testbench.vhd
+l0
+L4
+VElBdQ4]BJ^;BiYn>aF>jC1
+!s100 5Jzmc7LCoCAKa72^@n>Za3
+Z6 OP;C;10.4a;61
+32
+Z7 !s110 1510346125
+!i10b 1
+Z8 !s108 1510346125.000000
+Z9 !s90 -reportprogress|30|-work|work|C:/Users/ASUS/Documents/VCU Courses/EGRE 365/Labs/Lab9/lab9/TWICtl_testbench.vhd|
+Z10 !s107 C:/Users/ASUS/Documents/VCU Courses/EGRE 365/Labs/Lab9/lab9/TWICtl_testbench.vhd|
+!i113 1
+Z11 o-work work -O0
+Z12 tExplicit 1
+Abehavior
+Z13 DPx4 ieee 9 math_real 0 22 Sk6CSihbPL<f[^Shm]=KX0
+Z14 DPx4 ieee 18 std_logic_unsigned 0 22 ;eZjO2D4ZDz<]0>8AL<ne1
+Z15 DPx4 ieee 15 std_logic_arith 0 22 [G314=:2zXJ`VORJe1J@Z1
+Z16 DEx4 work 6 twictl 0 22 AcO6Dz7`=bI?8SPDEg`8C1
+R2
+R3
+Z17 DEx4 work 13 twi_testbench 0 22 ElBdQ4]BJ^;BiYn>aF>jC1
+l43
+L7
+ViJP1G54RS@lYod?bZ6gOU1
+!s100 GhCeU@Q=OL2Ve46cgVCE10
+R6
+32
+R7
+!i10b 1
+R8
+R9
+R10
+!i113 1
+R11
+R12
+Etwictl
+Z18 w1477498509
+R13
+R14
+R15
+R2
+R3
+R0
+Z19 8C:/Users/ASUS/Documents/VCU Courses/EGRE 365/Labs/Lab9/lab9/TWICtl.vhd
+Z20 FC:/Users/ASUS/Documents/VCU Courses/EGRE 365/Labs/Lab9/lab9/TWICtl.vhd
+l0
+L31
+VAcO6Dz7`=bI?8SPDEg`8C1
+!s100 S5WbzNgJ?W`FFa;cRDQ7n2
+R6
+32
+Z21 !s110 1510346124
+!i10b 1
+Z22 !s108 1510346124.000000
+Z23 !s90 -reportprogress|300|-work|work|C:/Users/ASUS/Documents/VCU Courses/EGRE 365/Labs/Lab9/lab9/TWICtl.vhd|
+Z24 !s107 C:/Users/ASUS/Documents/VCU Courses/EGRE 365/Labs/Lab9/lab9/TWICtl.vhd|
+!i113 1
+R11
+R12
+Abehavioral
+R13
+R14
+R15
+R2
+R3
+R16
+l117
+L87
+VoJ4^abj_2;jPhf6JXc^oQ1
+!s100 _SH9DmS_Kizni>D8PKGD82
+R6
+32
+R21
+!i10b 1
+R22
+R23
+R24
+!i113 1
+R11
+R12
