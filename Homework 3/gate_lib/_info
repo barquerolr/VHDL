@@ -1,0 +1,127 @@
+m255
+K4
+z2
+13
+!s112 1.1
+!i10d 8192
+!i10e 25
+!i10f 100
+cModel Technology
+Z0 dC:/Users/ASUS/Documents/VCU Courses/EGRE 365/Homework 3
+Eand2
+Z1 w1442540484
+Z2 DPx3 std 6 textio 0 22 zE1`LPoLg^DX3Oz^4Fj1K3
+Z3 DPx4 ieee 14 std_logic_1164 0 22 eNV`TJ_GofJTzYa?f<@Oe1
+R0
+Z4 8C:/Users/ASUS/Documents/VCU Courses/EGRE 365/Homework 3/hw3_gates/and2.vhd
+Z5 FC:/Users/ASUS/Documents/VCU Courses/EGRE 365/Homework 3/hw3_gates/and2.vhd
+l0
+L4
+VNIgJEO6I`:?1:@jol1zg@3
+!s100 6<KDR1K5YSkQ0I`E8WD@20
+Z6 OP;C;10.4a;61
+32
+Z7 !s110 1507582288
+!i10b 1
+Z8 !s108 1507582288.000000
+Z9 !s90 -reportprogress|300|-work|gate_lib|C:/Users/ASUS/Documents/VCU Courses/EGRE 365/Homework 3/hw3_gates/and2.vhd|
+Z10 !s107 C:/Users/ASUS/Documents/VCU Courses/EGRE 365/Homework 3/hw3_gates/and2.vhd|
+!i113 1
+Z11 o-work gate_lib -O0
+Z12 tExplicit 1
+Asimple
+R2
+R3
+Z13 DEx4 work 4 and2 0 22 NIgJEO6I`:?1:@jol1zg@3
+l13
+L11
+VAzY5MkoHX2gUUULbXCB;H0
+!s100 4z[DDLNik2lB5oN@^2FfK1
+R6
+32
+R7
+!i10b 1
+R8
+R9
+R10
+!i113 1
+R11
+R12
+Einv
+R1
+R2
+R3
+R0
+Z14 8C:/Users/ASUS/Documents/VCU Courses/EGRE 365/Homework 3/hw3_gates/inv.vhd
+Z15 FC:/Users/ASUS/Documents/VCU Courses/EGRE 365/Homework 3/hw3_gates/inv.vhd
+l0
+L4
+VA3RBUoC83z9@8U^I6=HN]2
+!s100 3NMX5aMmQAkE1AhH^bRMF1
+R6
+32
+Z16 !s110 1507582293
+!i10b 1
+Z17 !s108 1507582293.000000
+Z18 !s90 -reportprogress|300|-work|gate_lib|C:/Users/ASUS/Documents/VCU Courses/EGRE 365/Homework 3/hw3_gates/inv.vhd|
+Z19 !s107 C:/Users/ASUS/Documents/VCU Courses/EGRE 365/Homework 3/hw3_gates/inv.vhd|
+!i113 1
+R11
+R12
+Asimple
+R2
+R3
+Z20 DEx4 work 3 inv 0 22 A3RBUoC83z9@8U^I6=HN]2
+l12
+L10
+V2U=2nha<V6VX>?d:4FUgo3
+!s100 BQFGIPYGISQj]cX_SIdSO0
+R6
+32
+R16
+!i10b 1
+R17
+R18
+R19
+!i113 1
+R11
+R12
+Eor2
+R1
+R2
+R3
+R0
+Z21 8C:/Users/ASUS/Documents/VCU Courses/EGRE 365/Homework 3/hw3_gates/or2.vhd
+Z22 FC:/Users/ASUS/Documents/VCU Courses/EGRE 365/Homework 3/hw3_gates/or2.vhd
+l0
+L4
+VOlNg9e<3YjEkP<Ma@K9CI1
+!s100 =bO]4>Df6dU2]8I;YnMhG2
+R6
+32
+Z23 !s110 1507582294
+!i10b 1
+Z24 !s108 1507582294.000000
+Z25 !s90 -reportprogress|300|-work|gate_lib|C:/Users/ASUS/Documents/VCU Courses/EGRE 365/Homework 3/hw3_gates/or2.vhd|
+Z26 !s107 C:/Users/ASUS/Documents/VCU Courses/EGRE 365/Homework 3/hw3_gates/or2.vhd|
+!i113 1
+R11
+R12
+Asimple
+R2
+R3
+Z27 DEx4 work 3 or2 0 22 OlNg9e<3YjEkP<Ma@K9CI1
+l13
+L11
+VfSh`S4=@<<]DcRb9d[gHP2
+!s100 ]?]EMcnL>a9?efbXJZY0m2
+R6
+32
+R23
+!i10b 1
+R24
+R25
+R26
+!i113 1
+R11
+R12

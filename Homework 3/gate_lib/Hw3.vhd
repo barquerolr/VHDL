@@ -1,0 +1,160 @@
+library IEEE;
+use IEEE.std_logic_1164.all;
+library gate_lib;
+
+entity F3 is
+  port(A   : in std_logic;
+       B   : in std_logic;
+       C   : in std_logic;
+       D   : in std_logic;
+       F  : out std_logic);
+end f3;
+
+architecture structural of F3 is
+  
+  --component declarations
+  component and2 is
+    generic(Tp : time := 2 ns);
+    port(in1  : in std_logic;
+         in2  : in std_logic;
+         out1 : out std_logic);
+  end component;
+  
+  component or2 is
+    generic(Tp : time := 2 ns);
+    port(in1  : in std_logic;
+         in2  : in std_logic;
+         out1 : out std_logic);
+  end component;
+  
+  component inv is
+    generic(Tp : time := 1 ns);
+    port(in1  : in std_logic;
+         out1 : out std_logic);
+  end component;
+  
+  for all : and2 use entity gate_lib.and2(simple);
+  for all : or2 use entity gate_lib.or2(simple);
+  for all : inv use entity gate_lib.inv(simple);
+  
+  --signal statements
+  signal sig1,  sig2,  sig3,  sig4,  sig5,
+         sig6,  sig7,  sig8,  sig9,  sig10,
+         sig11, sig12, sig13, sig14, sig15,
+	 sig16, sig17, sig18, sig19, sig20,
+	 sig21, sig22, sig23, sig24, sig25,
+	 sig26, sig27  : std_logic;
+  
+  begin
+ 
+    NOT_1 : inv generic map(Tp => 1 ns)
+                port map(in1 => A,
+                        out1 => sig1);
+                        
+    NOT_2 : inv generic map(Tp => 1 ns)
+                port map(in1 => B,
+                        out1 => sig2);
+                        
+    NOT_3 : inv generic map(Tp => 1 ns)
+                port map(in1 => C,
+                        out1 => sig3);
+                        
+    NOT_4 : inv generic map(Tp => 1 ns)
+                port map(in1 => D,
+                        out1 => sig4);  
+
+    AND_1 : and2 generic map (Tp => 2 ns)
+	 	 port map(in1 => sig1, in2 => B,
+			  out1 => sig5);
+	
+    AND_2 : and2 generic map(Tp => 2 ns)
+		port map(in1 => sig3, in2 => sig4,
+			 out1 => sig6);
+ 
+    AND_3 : and2 generic map(Tp => 2 ns)
+		port map(in1 => sig5, in2 => sig6,
+			 out1 => sig7);
+   
+    AND_4 : and2 generic map (Tp => 2 ns)
+	 	 port map(in1 => A, in2 => sig2,
+			  out1 => sig8);
+	
+    AND_5 : and2 generic map(Tp => 2 ns)
+		port map(in1 => sig8, in2 => sig6,
+			 out1 => sig9);
+ 
+    OR_1 : or2 generic map(Tp => 2 ns)
+		port map(in1 => sig7, in2 => sig9,
+			 out1 => sig10);
+
+    AND_6 : and2 generic map (Tp => 2 ns)
+	 	 port map(in1 => sig1, in2 => sig2,
+			  out1 => sig11);
+	
+    AND_7 : and2 generic map(Tp => 2 ns)
+		port map(in1 => sig3, in2 => D,
+			 out1 => sig12);
+ 
+    AND_8 : and2 generic map(Tp => 2 ns)
+		port map(in1 => sig11, in2 => sig12,
+			 out1 => sig13);
+
+    OR_2 : or2 generic map(Tp => 2 ns)
+		port map(in1 => sig10, in2 => sig13,
+			 out1 => sig14);
+
+    AND_9 : and2 generic map(Tp => 2 ns)
+		port map(in1 => A, in2 => B,
+			 out1 => sig15);
+ 
+    AND_10 : and2 generic map(Tp => 2 ns)
+		port map(in1 => sig15, in2 => sig12,
+			 out1 => sig16);
+
+    OR_3 : or2 generic map(Tp => 2 ns)
+		port map(in1 => sig14, in2 => sig16,
+			 out1 => sig17);
+
+    AND_11 : and2 generic map(Tp => 2 ns)
+		port map(in1 => C, in2 => D,
+			 out1 => sig18);
+ 
+    AND_12 : and2 generic map(Tp => 2 ns)
+		port map(in1 => sig5, in2 => sig18,
+			 out1 => sig19);
+
+    OR_4 : or2 generic map(Tp => 2 ns)
+		port map(in1 => sig17, in2 => sig19,
+			 out1 => sig20);
+
+    AND_13 : and2 generic map(Tp => 2 ns)
+		port map(in1 => sig8, in2 => sig18,
+			 out1 => sig21);
+
+    OR_5 : or2 generic map(Tp => 2 ns)
+		port map(in1 => sig20, in2 => sig21,
+			 out1 => sig22);
+
+    AND_14 : and2 generic map(Tp => 2 ns)
+		port map(in1 => C, in2 => sig4,
+			 out1 => sig23);
+ 
+    AND_15 : and2 generic map(Tp => 2 ns)
+		port map(in1 => sig11, in2 => sig23,
+			 out1 => sig24);
+
+    OR_6 : or2 generic map(Tp => 2 ns)
+		port map(in1 => sig22, in2 => sig24,
+			 out1 => sig25);
+
+    AND_16 : and2 generic map(Tp => 2 ns)
+		port map(in1 => sig15, in2 => sig23,
+			 out1 => sig26);
+
+    OR_7 : or2 generic map(Tp => 2 ns)
+		port map(in1 => sig25, in2 => sig26,
+			 out1 => F);
+end structural;
+
+
+   

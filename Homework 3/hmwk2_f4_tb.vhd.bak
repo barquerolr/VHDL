@@ -1,0 +1,135 @@
+library IEEE;
+use IEEE.std_logic_1164.all;
+
+entity hmwk2_f4_tb is
+end hmwk2_f4_tb;
+
+architecture behavior of hmwk2_f4_tb is
+
+  -- define the maximum delay for the DUT
+  constant MAX_DELAY : time := 50 ns;
+  constant NO_OF_VALUES : integer := 16;
+
+  --declare a constant to hold an array of input values
+  type input_value_array is array (0 to (NO_OF_VALUES-1)) of std_logic;
+  constant in1_sig_values : input_value_array := ('0','1','0','1',
+                                                  '0','1','0','1',
+                                                  '0','1','0','1',
+                                                  '0','1','0','1');
+  constant in2_sig_values : input_value_array := ('0','0','1','1',
+                                                  '0','0','1','1',
+                                                  '0','0','1','1',
+                                                  '0','0','1','1');
+  constant in3_sig_values : input_value_array := ('0','0','0','0',
+                                                  '1','1','1','1',
+                                                  '0','0','0','0',
+                                                  '1','1','1','1');
+  constant in4_sig_values : input_value_array := ('0','0','0','0',
+                                                  '0','0','0','0',
+                                                  '1','1','1','1',
+                                                  '1','1','1','1');
+  -- define signals that connect to DUT
+  signal in1_sig : std_logic;
+  signal in2_sig : std_logic;
+  signal in3_sig : std_logic;
+  signal in4_sig : std_logic;
+  signal out1 : std_logic; 
+  
+  begin
+  
+	-- this is the process that will generate the inputs
+    stimulus : process
+     begin
+        for i in 0 to (NO_OF_VALUES-1) loop
+          in1_sig <= in1_sig_values(i);
+          in2_sig <= in2_sig_values(i);
+          in3_sig <= in3_sig_values(i);
+          in4_sig <= in4_sig_values(i);
+          wait for MAX_DELAY;
+        end loop;
+      wait; -- stop the process to avoid an infinite loop
+    end process stimulus;
+    
+    -- this is the component instantiation for the
+    -- DUT - the device we are testing
+    DUT : entity work.f4(structural)
+        port map(  D => in1_sig,
+                   C => in2_sig,
+                   B => in3_sig,
+                   A => in4_sig,
+                   F => out1);
+    
+    --this is the process that will monitor the outputs
+    monitor : process
+      begin
+        wait for (0.5*MAX_DELAY); --0 0000
+        assert out1 = '1'
+          report "ERROR - incorrect output value at 0 ns"
+          severity error;
+        wait for MAX_DELAY;       --1 0001
+        assert out1 = '1'
+          report "ERROR - incorrect output value at 10 ns"
+          severity error;
+        wait for MAX_DELAY;       --2 0010
+        assert out1 = '1'
+          report "ERROR - incorrect output value at 20 ns"
+          severity error;
+        wait for MAX_DELAY;       --3 0011
+        assert out1 = '0'
+          report "ERROR - incorrect output value at 30 ns"
+          severity error;
+        wait for MAX_DELAY;       --4 0100
+        assert out1 = '1'
+          report "ERROR - incorrect output value at 40 ns"
+          severity error;
+        wait for MAX_DELAY;       --5 0101
+        assert out1 = '1'
+          report "ERROR - incorrect output value at 50 ns"
+          severity error;
+        wait for MAX_DELAY;       --6 0110
+        assert out1 = '1'
+          report "ERROR - incorrect output value at 60 ns"
+          severity error;
+        wait for MAX_DELAY;       --7 0111
+        assert out1 = '0'
+          report "ERROR - incorrect output value at 70 ns"
+          severity error;
+        wait for MAX_DELAY;       --8 1000
+        assert out1 = '1'
+          report "ERROR - incorrect output value at 80 ns"
+          severity error;
+        wait for MAX_DELAY;       --9 1001
+        assert out1 = '1'
+          report "ERROR - incorrect output value at 90 ns"
+          severity error;
+        wait for MAX_DELAY;       --10 1010
+        assert out1 = '0'
+          report "ERROR - incorrect output value at 100 ns"
+          severity error;
+        wait for MAX_DELAY;       --11 1011
+        assert out1 = '0'
+          report "ERROR - incorrect output value at 110 ns"
+          severity error;
+        wait for MAX_DELAY;       --12 1100
+        assert out1 = '1'
+          report "ERROR - incorrect output value at 120 ns"
+          severity error;
+        wait for MAX_DELAY;       --13 1101
+        assert out1 = '1'
+          report "ERROR - incorrect output value at 130 ns"
+          severity error;
+        wait for MAX_DELAY;       --14 1110
+        assert out1 = '1'
+          report "ERROR - incorrect output value at 140 ns"
+          severity error;
+        wait for MAX_DELAY;       --15 1111
+        assert out1 = '0'
+          report "ERROR - incorrect output value at 150 ns"
+          severity error;
+        wait; --stop the process to avoid an infinite loop
+    end process monitor;
+    
+end behavior;
+
+
+
